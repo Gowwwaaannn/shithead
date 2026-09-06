@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#062516">
+<title>💩 Head</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;background:#061c11;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button{font:inherit;color:#fff;border:0;cursor:pointer}.screen{display:none;min-height:100dvh;background:linear-gradient(#10482d,#061b10)}.screen.active{display:block}.home{padding:calc(env(safe-area-inset-top) + 60px) 22px 30px;text-align:center}.logo{font-size:52px;font-weight:900;margin-top:8vh}.tag{letter-spacing:4px;color:#aebbb2;font-size:11px;margin:14px 0 65px}.menu{max-width:520px;margin:auto}.menu button,.big{width:100%;padding:19px;border-radius:17px;margin:8px 0;background:#123b26;font-weight:800;font-size:17px}.menu .primary,.primary{background:#20a254!important}header{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:calc(env(safe-area-inset-top) + 8px) 12px 10px;background:#092919}header h2{text-align:center;font-size:16px;letter-spacing:1px;margin:0}.back{background:#173c28;width:42px;height:42px;border-radius:12px;font-size:25px}.panel{padding:22px;max-width:560px;margin:auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 25px}.chip{width:48px;padding:11px 0;background:#173d28;border-radius:12px}.chip.on{background:#28a75b}.label{font-size:12px;color:#b8c3bc}.rules{background:rgba(255,255,255,.06);border-radius:15px;padding:15px;font-size:13px;line-height:1.45;color:#ced6d1;margin:20px 0}.game{background:#0b492a}.opponents{display:flex;gap:7px;overflow:auto;padding:8px;background:#082d1a;min-height:74px}.opp{min-width:95px;text-align:center;background:rgba(255,255,255,.07);padding:8px;border-radius:12px;font-size:10px}.opp.turn{outline:2px solid #68d58d}.avatar{font-size:23px}.table{height:39vh;min-height:260px;position:relative;background:radial-gradient(circle,#197348,#0d542f 55%,#093d23);border-bottom:1px solid #052615}.centre{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);display:flex;gap:38px}.pilebox{text-align:center;font-size:9px;color:#d3ddd6}.card,.backcard{width:72px;height:104px;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 12px #0007;position:relative}.card{background:#faf8f0;color:#111;border:1px solid #d0ccc0}.card.red{color:#bd1d2d}.rank{position:absolute;top:5px;left:7px;font-size:19px;font-weight:900}.suit{font-size:29px}.backcard{background:repeating-linear-gradient(45deg,#173c27 0 8px,#092b19 8px 16px);border:2px solid #d8d7cf;font-size:29px}.empty{background:#0002;border:1px dashed #ffffff55;color:#ffffff55;box-shadow:none;font-size:10px}.status{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#04170dcc;border-radius:18px;padding:8px 13px;font-size:11px;white-space:nowrap}.player{background:#082f1c;padding:8px 8px calc(env(safe-area-inset-bottom) + 8px);min-height:240px}.smalltitle{font-size:9px;letter-spacing:1px;color:#aab5ae}.tablecards{display:flex;gap:5px;height:69px;margin:5px 0 8px}.pair{position:relative;width:48px;height:63px}.pair .backcard,.pair .card{width:44px;height:61px;position:absolute}.pair .card{left:3px}.pair .rank{font-size:13px;left:4px}.pair .suit{font-size:18px}.handtop{display:flex;justify-content:space-between;align-items:center}.pickup{width:auto;background:#18442b;padding:8px 10px;border-radius:10px;font-size:9px}.hand{display:flex;overflow-x:auto;height:116px;align-items:flex-end;padding:3px}.hand .card{flex:0 0 67px;margin-right:-7px;height:103px}.hand .disabled{opacity:.35}.hand .selected{transform:translateY(-14px);outline:3px solid #7ee5a0}.playselected{width:auto;background:#20a254;padding:8px 12px;border-radius:10px;font-size:9px;font-weight:800;margin-left:6px}.modal{display:none;position:fixed;inset:0;background:#000a;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#102c1d;padding:20px;border-radius:20px;max-width:430px;width:100%;line-height:1.45}.modalbox h3{margin-top:0}.swapwrap{padding:20px;max-width:560px;margin:auto}.swapnote{background:rgba(255,255,255,.07);padding:14px;border-radius:14px;font-size:13px;line-height:1.45;margin-bottom:18px}.swaprow{display:flex;gap:9px;flex-wrap:wrap;margin:9px 0 22px}.swaprow .card{width:66px;height:96px}.swaprow .chosen{transform:translateY(-8px);outline:3px solid #7ee5a0}.swapmsg{min-height:22px;color:#bcd2c4;font-size:12px;margin:4px 0 8px}.scoretable{width:100%;border-collapse:collapse;font-size:12px}.scoretable td,.scoretable th{padding:10px 5px;border-bottom:1px solid #ffffff18;text-align:left}
+</style>
+</head>
+<body>
+<section id="home" class="screen active home">
+ <div class="logo">💩 HEAD</div><div class="tag">GET RID OF YOUR CARDS. DON’T BE A 💩HEAD!</div>
+ <div class="menu">
+  <button class="primary" id="botsBtn">PLAY VS BOTS</button>
+  <button id="passBtn">PASS &amp; PLAY</button>
+  <button id="scoreBtn">SCOREBOARD</button>
+ </div>
+</section>
+
+<section id="setup" class="screen">
+ <header><button class="back" data-home>‹</button><h2>NEW GAME</h2><span></span></header>
+ <div class="panel">
+  <div class="label">NUMBER OF PLAYERS</div><div id="playerChips" class="chips"></div>
+  <div id="diffBox"><div class="label">BOT DIFFICULTY</div><div id="diffChips" class="chips"></div></div>
+  <div class="rules">2–4 players receive 3 face-down, 3 face-up and 3 in hand. 5–8 receive 2/2/2.<br><br><b>2</b> resets, <b>8</b> is transparent, <b>10</b> burns. Four equal ranks in sequence also burn. <b>7 is not a special card</b>: it can only be played when it fits the normal sequence (or after a 2 reset). Once a 7 is played, the next player must play 7 or lower. Special cards can always be played.</div>
+  <button id="dealBtn" class="big primary">DEAL CARDS</button>
+ </div>
+</section>
+
+
+<section id="swap" class="screen">
+ <header><span></span><h2 id="swapTitle">CHOOSE YOUR CARDS</h2><span></span></header>
+ <div class="swapwrap">
+  <div class="swapnote">Before play begins, you may swap any card in your hand with any face-up card. Tap one card from your hand and one face-up card to exchange them. Make as many swaps as you like, then confirm when you are happy.</div>
+  <div class="label">YOUR HAND</div><div id="swapHand" class="swaprow"></div>
+  <div class="label">FACE-UP CARDS</div><div id="swapUp" class="swaprow"></div>
+  <div id="swapMsg" class="swapmsg">Select one card from each row to swap.</div>
+  <button id="swapConfirm" class="big primary">I'M HAPPY — CONFIRM</button>
+ </div>
+</section>
+
+<section id="game" class="screen game">
+ <header><button class="back" id="exitBtn">‹</button><div><h2>💩 HEAD</h2><div id="turnText" style="text-align:center;font-size:9px;color:#aebbb2"></div></div><button class="back" id="rulesBtn">?</button></header>
+ <div id="opponents" class="opponents"></div>
+ <div class="table"><div class="centre">
+   <div class="pilebox"><div class="backcard">💩</div><div id="deckText">DECK</div></div>
+   <div class="pilebox"><div id="pileCard" class="card empty">PILE</div><div id="pileText">0 CARDS</div></div>
+ </div><div id="status" class="status">Ready</div></div>
+ <div class="player">
+   <div class="smalltitle">FACE-UP / FACE-DOWN</div><div id="tableCards" class="tablecards"></div>
+   <div class="handtop"><div id="handTitle" class="smalltitle">YOUR HAND</div><div><button id="playSelectedBtn" class="playselected" style="display:none">PLAY SELECTED</button><button id="pickupBtn" class="pickup">PICK UP</button></div></div>
+   <div id="hand" class="hand"></div>
+ </div>
+</section>
+
+<section id="scores" class="screen">
+ <header><button class="back" data-home>‹</button><h2>SCOREBOARD</h2><span></span></header>
+ <div class="panel"><div id="scoreBody"></div><button id="resetBtn" class="big">RESET SCORES</button></div>
+</section>
+
+<div id="modal" class="modal"><div class="modalbox"><h3 id="modalTitle"></h3><div id="modalBody"></div><button id="modalOk" class="big primary">OK</button></div></div>
+
+<script>
+(function(){
+'use strict';
+var ranks=['3','4','5','6','7','8','9','10','J','Q','K','A','2'];
+var suits=['♣','♦','♥','♠'], specials=['2','8','10'];
+var botPool=[['Sir Pooington','🧐'],['Professor Plop','🤓'],['Derek the Duck','🦆'],['Lord Stinkbottom','👑'],['Gary the Goblin','👺'],['The Turd Burglar','🥷'],['Captain Crapper','🏴‍☠️']];
+var mode='bots', count=4, difficulty='Medium', players=[], deck=[], pile=[], current=0, finish=[], ended=false, selected=[], swapPlayer=0, swapHandSel=null, swapUpSel=null;
+
+function $(id){return document.getElementById(id)}
+function show(id){document.querySelectorAll('.screen').forEach(function(x){x.classList.remove('active')});$(id).classList.add('active')}
+function val(r){return ranks.indexOf(r)}
+function isSpecial(r){return specials.indexOf(r)>=0}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function makeDeck(){var a=[];suits.forEach(function(s){ranks.forEach(function(r){a.push({r:r,s:s})})});return shuffle(a)}
+function sortHand(a){a.sort(function(x,y){var xs=isSpecial(x.r),ys=isSpecial(y.r);if(xs!==ys)return xs?1:-1;return val(x.r)-val(y.r)})}
+function topEffective(){for(var i=pile.length-1;i>=0;i--)if(pile[i].r!=='8')return pile[i];return null}
+function legal(c){if(isSpecial(c.r))return true;var t=topEffective();if(!t)return true;if(t.r==='2')return true;if(t.r==='7')return val(c.r)<=val('7');return val(c.r)>=val(t.r)}
+function source(p){return p.hand.length?'hand':(p.up.length?'up':'down')}
+function cardNode(c,disabled){
+ var d=document.createElement('div');d.className='card '+((c.s==='♥'||c.s==='♦')?'red ':'')+(disabled?'disabled':'');
+ d.innerHTML='<span class="rank">'+c.r+'</span><span class="suit">'+c.s+'</span>';return d
+}
+function flash(s){$('status').textContent=s}
+function buildSetup(){
+ $('playerChips').innerHTML='';
+ for(var n=2;n<=8;n++){(function(n){var b=document.createElement('button');b.className='chip '+(n===count?'on':'');b.textContent=n;b.onclick=function(){count=n;buildSetup()};$('playerChips').appendChild(b)})(n)}
+ $('diffChips').innerHTML='';
+ ['Easy','Medium','Hard'].forEach(function(d){var b=document.createElement('button');b.className='chip '+(d===difficulty?'on':'');b.style.width='auto';b.style.padding='11px 15px';b.textContent=d;b.onclick=function(){difficulty=d;buildSetup()};$('diffChips').appendChild(b)});
+ $('diffBox').style.display=mode==='pass'?'none':'block'
+}
+function setup(m){mode=m;buildSetup();show('setup')}
+function deal(){
+ deck=makeDeck();pile=[];finish=[];ended=false;players=[];selected=[];swapPlayer=0;swapHandSel=null;swapUpSel=null;var q=count<=4?3:2;
+ for(var i=0;i<count;i++){var human=mode==='pass'||i===0,info=human?(i===0?['You','🙂']:['Player '+(i+1),'🙂']):botPool[(i-1)%botPool.length];players.push({name:info[0],avatar:info[1],human:human,hand:[],up:[],down:[],out:false})}
+ for(var x=0;x<q;x++)players.forEach(function(p){p.down.push(deck.pop())});
+ for(var x=0;x<q;x++)players.forEach(function(p){p.up.push(deck.pop())});
+ for(var x=0;x<q;x++)players.forEach(function(p){p.hand.push(deck.pop())});
+ players.forEach(function(p){sortHand(p.hand)});
+ beginSwapPhase()
+}
+
+function botArrange(p){
+ var all=p.hand.concat(p.up);
+ all.sort(function(a,b){
+   function score(c){
+     if(c.r==='2')return 100;
+     if(c.r==='10')return 95;
+     if(c.r==='8')return 90;
+     return val(c.r);
+   }
+   return score(b)-score(a)
+ });
+ var q=p.up.length;
+ p.up=all.slice(0,q);
+ p.hand=all.slice(q);
+ sortHand(p.hand)
+}
+function beginSwapPhase(){
+ if(mode==='bots'){
+   for(var i=1;i<players.length;i++)botArrange(players[i]);
+   swapPlayer=0;
+ }else swapPlayer=0;
+ swapHandSel=null;swapUpSel=null;
+ renderSwap();
+ show('swap')
+}
+function renderSwap(){
+ var p=players[swapPlayer];
+ $('swapTitle').textContent=(mode==='pass'?p.name.toUpperCase():'YOUR')+' SETUP';
+ $('swapHand').innerHTML='';
+ p.hand.forEach(function(c,i){
+   var d=cardNode(c,false);
+   if(swapHandSel===i)d.classList.add('chosen');
+   d.onclick=function(){swapHandSel=(swapHandSel===i?null:i);trySwap();renderSwap()};
+   $('swapHand').appendChild(d)
+ });
+ $('swapUp').innerHTML='';
+ p.up.forEach(function(c,i){
+   var d=cardNode(c,false);
+   if(swapUpSel===i)d.classList.add('chosen');
+   d.onclick=function(){swapUpSel=(swapUpSel===i?null:i);trySwap();renderSwap()};
+   $('swapUp').appendChild(d)
+ });
+ $('swapMsg').textContent=(swapHandSel!==null||swapUpSel!==null)?'Now select one card from the other row.':'Select one card from each row to swap.'
+}
+function trySwap(){
+ if(swapHandSel===null||swapUpSel===null)return;
+ var p=players[swapPlayer],t=p.hand[swapHandSel];
+ p.hand[swapHandSel]=p.up[swapUpSel];
+ p.up[swapUpSel]=t;
+ sortHand(p.hand);
+ swapHandSel=null;swapUpSel=null;
+ $('swapMsg').textContent='Cards swapped. You can make another swap or confirm.'
+}
+function confirmSwap(){
+ swapHandSel=null;swapUpSel=null;
+ if(mode==='pass'&&swapPlayer<players.length-1){
+   swapPlayer++;
+   renderSwap();
+   return
+ }
+ startGame()
+}
+function startGame(){
+ var best=99;current=0;
+ players.forEach(function(p,i){
+   p.hand.forEach(function(c){
+     if(val(c.r)<best){best=val(c.r);current=i}
+   })
+ });
+ show('game');render();setTimeout(botTurn,500)
+}
+
+function four(){
+ if(pile.length<4)return false;var a=[];
+ for(var i=pile.length-1;i>=0&&a.length<4;i--){if(pile[i].r!=='8')a.push(pile[i].r)}
+ return a.length===4&&a.every(function(x){return x===a[0]})
+}
+function refill(p){var target=count<=4?3:2;while(deck.length&&p.hand.length>0&&p.hand.length<target)p.hand.push(deck.pop());sortHand(p.hand)}
+function checkOut(p){if(!p.hand.length&&!p.up.length&&!p.down.length&&!p.out){p.out=true;finish.push(players.indexOf(p));flash(p.name+' is out!');if(finish.length===players.length-1)gameEnd()}}
+function advance(){if(ended)return;var n=current;do{n=(n+1)%players.length}while(players[n].out);current=n}
+
+function playableIndexes(p){
+ var src=source(p),a=p[src],out=[];
+ if(src==='down')return a.map(function(_,i){return i});
+ a.forEach(function(c,i){if(legal(c))out.push(i)});
+ return out
+}
+function hasPlayable(p){
+ var src=source(p);
+ if(src==='down')return p.down.length>0;
+ return playableIndexes(p).length>0
+}
+function clearSelection(){selected=[]}
+function toggleSelect(index){
+ if(ended||current!==0&&mode==='bots')return;
+ var p=players[current],src=source(p);
+ if(src!=='hand'&&src!=='up')return;
+ var c=p[src][index]; if(!c||!legal(c))return;
+ if(selected.length && p[src][selected[0]] && p[src][selected[0]].r!==c.r){selected=[index]}
+ else {
+   var pos=selected.indexOf(index);
+   if(pos>=0)selected.splice(pos,1); else selected.push(index)
+ }
+ render()
+}
+function playSelected(){
+ if(!selected.length||ended)return;
+ var p=players[current],src=source(p);
+ if(src!=='hand'&&src!=='up')return;
+ var inds=selected.slice().sort(function(a,b){return b-a});
+ var cards=inds.map(function(i){return p[src][i]}).filter(Boolean);
+ if(!cards.length)return;
+ var r=cards[0].r;
+ if(cards.some(function(c){return c.r!==r||!legal(c)}))return;
+ inds.forEach(function(i){p[src].splice(i,1)});
+ clearSelection();
+ cards.forEach(function(c){pile.push(c)});
+ if(r==='10'||four()){
+   pile=[];flash(p.name+' burned the pile 🔥');refill(p);checkOut(p);render();
+   if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)}
+   return
+ }
+ refill(p);checkOut(p);advance();render();setTimeout(botTurn,600)
+}
+
+function play(pi,index){
+ if(ended||pi!==current)return;clearSelection();var p=players[pi],src=source(p),arr=p[src],c=arr[index];if(!c)return;var blind=src==='down';
+ if(!blind&&!legal(c)){flash('That card cannot be played');return}
+ arr.splice(index,1);
+ if(blind&&!legal(c)){pile.push(c);p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);flash(p.name+' flipped '+c.r+' blind and picked up');advance();render();setTimeout(botTurn,600);return}
+ pile.push(c);
+ if(c.r==='10'||four()){pile=[];flash(p.name+' burned the pile 🔥');refill(p);checkOut(p);render();if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)};return}
+ refill(p);checkOut(p);advance();render();setTimeout(botTurn,600)
+}
+function pickup(){
+ if(ended)return;var p=players[current];if(!(p.human||mode==='pass'))return;
+ if(hasPlayable(p)){flash('You have a playable card — you must play');return}
+ if(!pile.length){flash('Nothing to pick up');return}
+ clearSelection();p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);flash(p.name+' picked up');advance();render();setTimeout(botTurn,500)
+}
+function botIndex(p){
+ var src=source(p),a=p[src];if(src==='down')return Math.floor(Math.random()*a.length);
+ var opts=[];a.forEach(function(c,i){if(legal(c))opts.push({c:c,i:i})});if(!opts.length)return-1;
+ if(difficulty==='Easy')return opts[Math.floor(Math.random()*opts.length)].i;
+ opts.sort(function(a,b){var av=isSpecial(a.c.r)?20+val(a.c.r):val(a.c.r),bv=isSpecial(b.c.r)?20+val(b.c.r):val(b.c.r);return av-bv});return opts[0].i
+}
+function botTurn(){
+ if(ended)return;var p=players[current];if(p.human||mode==='pass'){render();return}
+ var i=botIndex(p);if(i<0){if(pile.length){p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);flash(p.name+' picked up')}advance();render();setTimeout(botTurn,600)}
+ else{
+   var src=source(p),r=p[src][i].r;
+   if(src!=='down'){
+     selected=[];p[src].forEach(function(c,j){if(c.r===r&&legal(c))selected.push(j)});
+     playSelected()
+   } else play(current,i)
+ }
+}
+function render(){
+ if(ended)return;$('turnText').textContent=players[current].name+"'s turn";$('deckText').textContent='DECK · '+deck.length;$('pileText').textContent=pile.length+' CARDS';
+ var pc=$('pileCard');pc.innerHTML='';pc.className='card empty';
+ if(pile.length){var c=pile[pile.length-1],nn=cardNode(c,false);nn.id='pileCard';pc.replaceWith(nn)}else pc.textContent='PILE';
+ $('opponents').innerHTML='';players.forEach(function(p,i){if(mode==='bots'&&i===0)return;var d=document.createElement('div');d.className='opp '+(i===current?'turn':'');d.innerHTML='<div class="avatar">'+p.avatar+'</div><b>'+p.name+'</b><br>'+(p.out?'OUT':p.hand.length+' hand · '+p.up.length+'/'+p.down.length);$('opponents').appendChild(d)});
+ var view=mode==='bots'?players[0]:players[current],human=(mode==='pass'||view.human)&&players.indexOf(view)===current;
+ $('handTitle').textContent=mode==='pass'?view.name.toUpperCase()+"'S HAND":'YOUR HAND';var canPlay=human&&hasPlayable(view);$('pickupBtn').style.display=(human&&!canPlay&&pile.length)?'inline-block':'none';$('playSelectedBtn').style.display=(human&&selected.length)?'inline-block':'none';$('playSelectedBtn').textContent=selected.length>1?'PLAY '+selected.length+' CARDS':'PLAY CARD';
+ $('tableCards').innerHTML='';var max=Math.max(view.up.length,view.down.length);
+ for(var i=0;i<max;i++){(function(i){var w=document.createElement('div');w.className='pair';if(view.down[i]){var b=document.createElement('div');b.className='backcard';b.textContent='💩';if(human&&!view.hand.length&&!view.up.length)b.onclick=function(){play(current,i)};w.appendChild(b)}if(view.up[i]){var cc=cardNode(view.up[i],!legal(view.up[i]));if(selected.indexOf(i)>=0&&!view.hand.length)cc.classList.add('selected');if(human&&!view.hand.length&&legal(view.up[i]))cc.onclick=function(){toggleSelect(i)};w.appendChild(cc)}$('tableCards').appendChild(w)})(i)}
+ $('hand').innerHTML='';view.hand.forEach(function(c,i){var ok=human&&legal(c),cc=cardNode(c,!ok);if(selected.indexOf(i)>=0)cc.classList.add('selected');if(ok)cc.onclick=function(){toggleSelect(i)};$('hand').appendChild(cc)})
+}
+function gameEnd(){
+ ended=true;var loser=-1;for(var i=0;i<players.length;i++)if(finish.indexOf(i)<0){loser=i;break}var order=finish.concat([loser]),data=JSON.parse(localStorage.getItem('pooHeadScores')||'{}');
+ order.forEach(function(pi,pos){var n=players[pi].name;if(!data[n])data[n]={g:0,w:0,h:0};data[n].g++;if(pos===0)data[n].w++;if(pos===order.length-1)data[n].h++});localStorage.setItem('pooHeadScores',JSON.stringify(data));
+ modal('Game over','<b>'+players[loser].name+'</b> is the 💩 HEAD.<br><br>'+order.map(function(i,n){return(n+1)+'. '+players[i].name+(i===loser?' 💩':'')}).join('<br>'))
+}
+function scores(){var data=JSON.parse(localStorage.getItem('pooHeadScores')||'{}'),rows=Object.keys(data).sort(function(a,b){return data[b].w-data[a].w});$('scoreBody').innerHTML=rows.length?'<table class="scoretable"><tr><th>Player</th><th>Games</th><th>Wins</th><th>💩</th></tr>'+rows.map(function(n){return'<tr><td>'+n+'</td><td>'+data[n].g+'</td><td>'+data[n].w+'</td><td>'+data[n].h+'</td></tr>'}).join('')+'</table>':'<div class="rules">No completed games yet.</div>';show('scores')}
+function modal(t,b){$('modalTitle').textContent=t;$('modalBody').innerHTML=b;$('modal').classList.add('show')}
+function closeModal(){$('modal').classList.remove('show')}
+
+$('botsBtn').onclick=function(){setup('bots')};$('passBtn').onclick=function(){setup('pass')};$('scoreBtn').onclick=scores;$('dealBtn').onclick=deal;$('swapConfirm').onclick=confirmSwap;$('pickupBtn').onclick=pickup;$('playSelectedBtn').onclick=playSelected;
+$('rulesBtn').onclick=function(){modal('Rules','Play equal or higher. A 2 can be played on anything and resets the pile, so any card may follow it. 8 is transparent and 10 burns. Four equal ranks burns. 7 is an ordinary card, so it can only be played when the normal sequence allows it (or after a 2 reset). After a 7, the next player must play 7 or lower. Special cards can always be played. When your hand is gone, use face-up cards, then face-down blind.')};
+$('exitBtn').onclick=function(){modal('Leave game?','Press OK to return to the home screen.');$('modalOk').onclick=function(){closeModal();show('home');$('modalOk').onclick=closeModal}};
+$('modalOk').onclick=closeModal;$('resetBtn').onclick=function(){localStorage.removeItem('pooHeadScores');scores()};
+document.querySelectorAll('[data-home]').forEach(function(b){b.onclick=function(){show('home')}});
+buildSetup();
+})();
+</script>
+</body>
+</html>
