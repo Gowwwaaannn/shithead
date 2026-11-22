@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#062516">
 <title>💩 Head</title>
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;background:#061c11;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button{font:inherit;color:#fff;border:0;cursor:pointer}.screen{display:none;min-height:100dvh;background:linear-gradient(#10482d,#061b10)}.screen.active{display:block}.home{padding:calc(env(safe-area-inset-top) + 60px) 22px 30px;text-align:center}.logo{font-size:52px;font-weight:900;margin-top:8vh}.tag{letter-spacing:4px;color:#aebbb2;font-size:11px;margin:14px 0 65px}.menu{max-width:520px;margin:auto}.menu button,.big{width:100%;padding:19px;border-radius:17px;margin:8px 0;background:#123b26;font-weight:800;font-size:17px}.menu .primary,.primary{background:#20a254!important}header{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:calc(env(safe-area-inset-top) + 8px) 12px 10px;background:#092919}header h2{text-align:center;font-size:16px;letter-spacing:1px;margin:0}.back{background:#173c28;width:42px;height:42px;border-radius:12px;font-size:25px}.panel{padding:22px;max-width:560px;margin:auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 25px}.chip{width:48px;padding:11px 0;background:#173d28;border-radius:12px}.chip.on{background:#28a75b}.label{font-size:12px;color:#b8c3bc}.rules{background:rgba(255,255,255,.06);border-radius:15px;padding:15px;font-size:13px;line-height:1.45;color:#ced6d1;margin:20px 0}.game{background:#0b492a}.opponents{display:flex;gap:7px;overflow:auto;padding:8px;background:#082d1a;min-height:74px}.opp{min-width:132px;text-align:center;background:rgba(255,255,255,.07);padding:8px;border-radius:12px;font-size:10px}.opp.turn{outline:2px solid #68d58d}.avatar{font-size:23px}.oppcards{display:flex;justify-content:center;gap:4px;margin:7px 0 3px;min-height:49px}.oppstack{position:relative;width:32px;height:46px}.oppstack .mini-back,.oppstack .mini-card{position:absolute;width:30px;height:43px;border-radius:5px}.mini-back{background:repeating-linear-gradient(45deg,#173c27 0 5px,#092b19 5px 10px);border:1px solid #d8d7cf;left:0;top:2px}.mini-card{background:#faf8f0;color:#111;border:1px solid #d0ccc0;left:2px;top:0;font-weight:800;font-size:10px;display:flex;align-items:center;justify-content:center;line-height:1}.mini-card.red{color:#bd1d2d}.oppmeta{font-size:9px;color:#c9d4cc}.table{height:39vh;min-height:260px;position:relative;background:radial-gradient(circle,#197348,#0d542f 55%,#093d23);border-bottom:1px solid #052615}.centre{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);display:flex;gap:38px}.pilebox{text-align:center;font-size:9px;color:#d3ddd6}.pilelayers{position:relative;width:92px;height:116px}.pilelayers .card{position:absolute;left:10px;top:0}.pilelayers .under8{left:0;top:18px;z-index:0}.pilelayers .top8{left:26px;top:0;z-index:1}.namegrid{display:grid;gap:12px}.namecard{background:rgba(255,255,255,.06);padding:14px;border-radius:14px}.namecard input{width:100%;padding:12px;border-radius:10px;border:1px solid #ffffff22;background:#082b1a;color:#fff;font:inherit;margin:8px 0}.emojis{display:flex;flex-wrap:wrap;gap:7px}.emojiBtn{width:44px;height:44px;border-radius:10px;background:#173d28;font-size:22px}.emojiBtn.on{outline:3px solid #7ee5a0;background:#23563a}.card,.backcard{width:72px;height:104px;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 12px #0007;position:relative}.card{background:#faf8f0;color:#111;border:1px solid #d0ccc0}.card.red{color:#bd1d2d}.rank{position:absolute;top:5px;left:7px;font-size:19px;font-weight:900}.suit{font-size:29px}.backcard{background:repeating-linear-gradient(45deg,#173c27 0 8px,#092b19 8px 16px);border:2px solid #d8d7cf;font-size:29px}.empty{background:#0002;border:1px dashed #ffffff55;color:#ffffff55;box-shadow:none;font-size:10px}.status{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#04170dcc;border-radius:18px;padding:8px 13px;font-size:11px;white-space:nowrap}.player{background:#082f1c;padding:8px 8px calc(env(safe-area-inset-bottom) + 8px);min-height:240px}.smalltitle{font-size:9px;letter-spacing:1px;color:#aab5ae}.tablecards{display:flex;gap:5px;height:69px;margin:5px 0 8px}.pair{position:relative;width:48px;height:63px}.pair .backcard,.pair .card{width:44px;height:61px;position:absolute}.pair .card{left:3px}.pair .rank{font-size:13px;left:4px}.pair .suit{font-size:18px}.handtop{display:flex;justify-content:space-between;align-items:center}.pickup{width:auto;background:#18442b;padding:8px 10px;border-radius:10px;font-size:9px}.hand{display:flex;overflow-x:auto;height:116px;align-items:flex-end;padding:3px}.hand .card{flex:0 0 67px;margin-right:-7px;height:103px}.hand .disabled{opacity:.35}.hand .selected{transform:translateY(-14px);outline:3px solid #7ee5a0}.playselected{width:auto;background:#20a254;padding:8px 12px;border-radius:10px;font-size:9px;font-weight:800;margin-left:6px}.handoff{display:none;position:fixed;inset:0;z-index:50;background:#061c11;align-items:center;justify-content:center;text-align:center;padding:28px}.handoff.show{display:flex}.handoffbox{max-width:430px;width:100%;background:#0d3521;border:1px solid #ffffff18;border-radius:24px;padding:30px 22px;box-shadow:0 18px 45px #0008}.handofficon{font-size:54px;margin-bottom:12px}.handoffbox h2{margin:0 0 10px;font-size:25px}.handoffbox p{color:#c1cec5;font-size:14px;line-height:1.5;margin:0 0 22px}.modal{display:none;position:fixed;inset:0;background:#000a;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#102c1d;padding:20px;border-radius:20px;max-width:430px;width:100%;line-height:1.45}.modalbox h3{margin-top:0}.swapwrap{padding:20px;max-width:560px;margin:auto}.swapnote{background:rgba(255,255,255,.07);padding:14px;border-radius:14px;font-size:13px;line-height:1.45;margin-bottom:18px}.swaprow{display:flex;gap:9px;flex-wrap:wrap;margin:9px 0 22px}.swaprow .card{width:66px;height:96px}.swaprow .chosen{transform:translateY(-8px);outline:3px solid #7ee5a0}.swapmsg{min-height:22px;color:#bcd2c4;font-size:12px;margin:4px 0 8px}.scoretable{width:100%;border-collapse:collapse;font-size:12px}.scoretable td,.scoretable th{padding:10px 5px;border-bottom:1px solid #ffffff18;text-align:left}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;background:#061c11;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button{font:inherit;color:#fff;border:0;cursor:pointer}.screen{display:none;min-height:100dvh;background:linear-gradient(#10482d,#061b10)}.screen.active{display:block}.home{padding:calc(env(safe-area-inset-top) + 60px) 22px 30px;text-align:center}.logo{font-size:52px;font-weight:900;margin-top:8vh}.tag{letter-spacing:4px;color:#aebbb2;font-size:11px;margin:14px 0 65px}.menu{max-width:520px;margin:auto}.menu button,.big{width:100%;padding:19px;border-radius:17px;margin:8px 0;background:#123b26;font-weight:800;font-size:17px}.menu .primary,.primary{background:#20a254!important}header{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:calc(env(safe-area-inset-top) + 8px) 12px 10px;background:#092919}header h2{text-align:center;font-size:16px;letter-spacing:1px;margin:0}.back{background:#173c28;width:42px;height:42px;border-radius:12px;font-size:25px}.panel{padding:22px;max-width:560px;margin:auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 25px}.chip{width:48px;padding:11px 0;background:#173d28;border-radius:12px}.chip.on{background:#28a75b}.label{font-size:12px;color:#b8c3bc}.rules{background:rgba(255,255,255,.06);border-radius:15px;padding:15px;font-size:13px;line-height:1.45;color:#ced6d1;margin:20px 0}.game{background:#0b492a}.opponents{display:flex;gap:7px;overflow:auto;padding:8px;background:#082d1a;min-height:74px}.opp{min-width:132px;text-align:center;background:rgba(255,255,255,.07);padding:8px;border-radius:12px;font-size:10px}.opp.turn{outline:2px solid #68d58d}.avatar{font-size:23px}.oppcards{display:flex;justify-content:center;gap:4px;margin:7px 0 3px;min-height:49px}.oppstack{position:relative;width:32px;height:46px}.oppstack .mini-back,.oppstack .mini-card{position:absolute;width:30px;height:43px;border-radius:5px}.mini-back{background:repeating-linear-gradient(45deg,#173c27 0 5px,#092b19 5px 10px);border:1px solid #d8d7cf;left:0;top:2px}.mini-card{background:#faf8f0;color:#111;border:1px solid #d0ccc0;left:2px;top:0;font-weight:800;font-size:10px;display:flex;align-items:center;justify-content:center;line-height:1}.mini-card.red{color:#bd1d2d}.oppmeta{font-size:9px;color:#c9d4cc}.table{height:39vh;min-height:260px;position:relative;background:radial-gradient(circle,#197348,#0d542f 55%,#093d23);border-bottom:1px solid #052615}.centre{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);display:flex;gap:38px}.pilebox{text-align:center;font-size:9px;color:#d3ddd6}.pilelayers{position:relative;width:92px;height:116px}.pilelayers .card{position:absolute;left:10px;top:0}.pilelayers .under8{left:0;top:18px;z-index:0}.pilelayers .top8{left:26px;top:0;z-index:1}.namegrid{display:grid;gap:12px}.namecard{background:rgba(255,255,255,.06);padding:14px;border-radius:14px}.namecard input{width:100%;padding:12px;border-radius:10px;border:1px solid #ffffff22;background:#082b1a;color:#fff;font:inherit;margin:8px 0}.emojis{display:flex;flex-wrap:wrap;gap:7px}.emojiBtn{width:44px;height:44px;border-radius:10px;background:#173d28;font-size:22px}.emojiBtn.on{outline:3px solid #7ee5a0;background:#23563a}.card,.backcard{width:72px;height:104px;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 12px #0007;position:relative}.card{background:#faf8f0;color:#111;border:1px solid #d0ccc0}.card.red{color:#bd1d2d}.rank{position:absolute;top:5px;left:7px;font-size:19px;font-weight:900}.suit{font-size:29px}.backcard{background:repeating-linear-gradient(45deg,#173c27 0 8px,#092b19 8px 16px);border:2px solid #d8d7cf;font-size:29px}.empty{background:#0002;border:1px dashed #ffffff55;color:#ffffff55;box-shadow:none;font-size:10px}.status{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#04170dcc;border-radius:18px;padding:8px 13px;font-size:11px;white-space:nowrap}.player{background:#082f1c;padding:8px 8px calc(env(safe-area-inset-bottom) + 8px);min-height:240px}.smalltitle{font-size:9px;letter-spacing:1px;color:#aab5ae}.tablecards{display:flex;gap:5px;height:69px;margin:5px 0 8px}.pair{position:relative;width:48px;height:63px}.pair .backcard,.pair .card{width:44px;height:61px;position:absolute}.pair .card{left:3px}.pair .rank{font-size:13px;left:4px}.pair .suit{font-size:18px}.handtop{display:flex;justify-content:space-between;align-items:center}.pickup{width:auto;background:#18442b;padding:8px 10px;border-radius:10px;font-size:9px}.hand{display:flex;overflow-x:auto;height:116px;align-items:flex-end;padding:3px}.hand .card{flex:0 0 67px;margin-right:-7px;height:103px}.hand .disabled{opacity:.35}.hand .selected{transform:translateY(-14px);outline:3px solid #7ee5a0}.playselected{width:auto;background:#20a254;padding:8px 12px;border-radius:10px;font-size:9px;font-weight:800;margin-left:6px}.handoff{display:none;position:fixed;inset:0;z-index:50;background:#061c11;align-items:center;justify-content:center;text-align:center;padding:28px}.handoff.show{display:flex}.handoffbox{max-width:430px;width:100%;background:#0d3521;border:1px solid #ffffff18;border-radius:24px;padding:30px 22px;box-shadow:0 18px 45px #0008}.handofficon{font-size:54px;margin-bottom:12px}.handoffbox h2{margin:0 0 10px;font-size:25px}.handoffbox p{color:#c1cec5;font-size:14px;line-height:1.5;margin:0 0 22px}.modal{display:none;position:fixed;inset:0;background:#000a;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#102c1d;padding:20px;border-radius:20px;max-width:430px;width:100%;line-height:1.45}.modalbox h3{margin-top:0}.swapwrap{padding:20px;max-width:560px;margin:auto}.swapnote{background:rgba(255,255,255,.07);padding:14px;border-radius:14px;font-size:13px;line-height:1.45;margin-bottom:18px}.swaprow{display:flex;gap:9px;flex-wrap:wrap;margin:9px 0 22px}.swaprow .card{width:66px;height:96px}.swaprow .chosen{transform:translateY(-8px);outline:3px solid #7ee5a0}.swapmsg{min-height:22px;color:#bcd2c4;font-size:12px;margin:4px 0 8px}.blindReveal{display:none;position:fixed;inset:0;z-index:65;background:#03180de8;align-items:center;justify-content:center;text-align:center;padding:24px}.blindReveal.show{display:flex}.blindRevealBox{width:100%;max-width:360px;background:#123b27;border:1px solid #78c99466;border-radius:22px;padding:25px 20px}.blindRevealBox .card{margin:15px auto 18px;transform:scale(1.3)}.blindRevealBox h2{margin:0 0 12px}.blindRevealBox p{font-size:14px;line-height:1.5;color:#e0eee4;margin:20px 0 0}.scoretable{width:100%;border-collapse:collapse;font-size:12px}.scoretable td,.scoretable th{padding:10px 5px;border-bottom:1px solid #ffffff18;text-align:left}
 </style>
 </head>
 <body>
@@ -79,6 +79,8 @@
  </div>
 </div>
 
+<div id="blindReveal" class="blindReveal" role="dialog" aria-live="assertive"><div class="blindRevealBox"><h2 id="blindRevealTitle">BLIND CARD REVEALED</h2><div id="blindRevealCard"></div><p id="blindRevealMessage"></p></div></div>
+
 <div id="modal" class="modal"><div class="modalbox"><h3 id="modalTitle"></h3><div id="modalBody"></div><button id="modalOk" class="big primary">OK</button></div></div>
 
 <script>
@@ -87,7 +89,7 @@
 var ranks=['3','4','5','6','7','8','9','10','J','Q','K','A','2'];
 var suits=['♣','♦','♥','♠'], specials=['2','8','10'];
 var botPool=[['Sir Pooington','🧐'],['Professor Plop','🤓'],['Derek the Duck','🦆'],['Lord Stinkbottom','👑'],['Gary the Goblin','👺'],['The Turd Burglar','🥷'],['Captain Crapper','🏴‍☠️']];var emojiChoices=['🙂','😎','🤓','🥳','🤠','👑','🦊','🐸','🐼','🦁','🐵','💩'];
-var mode='bots', count=4, difficulty='Medium', players=[], deck=[], pile=[], current=0, finish=[], ended=false, selected=[], swapPlayer=0, swapHandSel=null, swapUpSel=null, handoffCallback=null, pendingHumans=[], botHistory={}, botRecent=[], botMoves=0;
+var mode='bots', count=4, difficulty='Medium', players=[], deck=[], pile=[], current=0, finish=[], ended=false, selected=[], swapPlayer=0, swapHandSel=null, swapUpSel=null, handoffCallback=null, pendingHumans=[], botHistory={}, botRecent=[], botMoves=0,blindBusy=false;
 
 function $(id){return document.getElementById(id)}
 function show(id){document.querySelectorAll('.screen').forEach(function(x){x.classList.remove('active')});$(id).classList.add('active')}
@@ -187,7 +189,7 @@ function beginNames(){
 }
 
 function deal(){
- deck=makeDeck();pile=[];finish=[];ended=false;players=[];selected=[];botHistory={};botRecent=[];botMoves=0;swapPlayer=0;swapHandSel=null;swapUpSel=null;var q=count<=4?3:2;
+ blindBusy=false;$('blindReveal').classList.remove('show');deck=makeDeck();pile=[];finish=[];ended=false;players=[];selected=[];botHistory={};botRecent=[];botMoves=0,blindBusy=false;swapPlayer=0;swapHandSel=null;swapUpSel=null;var q=count<=4?3:2;
  for(var i=0;i<count;i++){
    var human=mode==='pass'||i===0,info;
    if(human){
@@ -310,30 +312,58 @@ function hasPlayable(p){
  return playableIndexes(p).length>0
 }
 function clearSelection(){selected=[]}
-function toggleSelect(index){
- if(ended||current!==0&&mode==='bots')return;
- var p=players[current],src=source(p);
+function selectionKey(src,index){return src+':'+index}
+function selectedAt(src,index){return selected.indexOf(selectionKey(src,index))>=0}
+function selectedCards(p){
+ return selected.map(function(key){
+   var parts=key.split(':'),src=parts[0],index=Number(parts[1]);
+   return {src:src,index:index,card:p[src]&&p[src][index]}
+ }).filter(function(x){return !!x.card})
+}
+function canMixFaceUp(p,rank){
+ // All cards remaining in the hand must be selected for this one move,
+ // and all must have the same rank as the chosen face-up card.
+ return p.hand.length>0 && p.hand.every(function(c,i){
+   return c.r===rank && selectedAt('hand',i)
+ })
+}
+function toggleSelect(src,index){
+ if(blindBusy||ended||(mode==='bots'&&current!==0))return;
+ var p=players[current];
  if(src!=='hand'&&src!=='up')return;
- var c=p[src][index]; if(!c||!legal(c))return;
- if(selected.length && p[src][selected[0]] && p[src][selected[0]].r!==c.r){selected=[index]}
- else {
-   var pos=selected.indexOf(index);
-   if(pos>=0)selected.splice(pos,1); else selected.push(index)
+ if(src==='up'&&p.hand.length&&!canMixFaceUp(p,p.up[index]&&p.up[index].r))return;
+ if(src==='hand'&&!p.hand.length)return;
+ var c=p[src][index];if(!c||!legal(c))return;
+ var key=selectionKey(src,index),existing=selectedCards(p),rank=existing.length?existing[0].card.r:null;
+ if(rank&&rank!==c.r)selected=[];
+ var pos=selected.indexOf(key);
+ if(pos>=0)selected.splice(pos,1);else selected.push(key);
+ // Removing a hand card may invalidate face-up selections.
+ var upSelections=selectedCards(p).filter(function(x){return x.src==='up'});
+ if(upSelections.length&&p.hand.length&&!canMixFaceUp(p,upSelections[0].card.r)){
+   selected=selected.filter(function(k){return k.indexOf('up:')!==0})
  }
  render()
 }
 function playSelected(){
- if(!selected.length||ended)return;
- var p=players[current],src=source(p);
- if(src!=='hand'&&src!=='up')return;
- var inds=selected.slice().sort(function(a,b){return b-a});
- var cards=inds.map(function(i){return p[src][i]}).filter(Boolean);
- if(!cards.length)return;
- var r=cards[0].r;
- if(cards.some(function(c){return c.r!==r||!legal(c)}))return;
- inds.forEach(function(i){p[src].splice(i,1)});
+ if(blindBusy||!selected.length||ended)return;
+ var p=players[current],entries=selectedCards(p);
+ if(entries.length!==selected.length)return;
+ var r=entries[0].card.r;
+ if(entries.some(function(x){return x.card.r!==r||!legal(x.card)}))return;
+ var ups=entries.filter(function(x){return x.src==='up'});
+ if(ups.length&&p.hand.length){
+   var hands=entries.filter(function(x){return x.src==='hand'});
+   if(hands.length!==p.hand.length||!p.hand.every(function(c){return c.r===r}))return
+ }
+ // Remove in descending index order from each individual card area.
+ ['hand','up'].forEach(function(src){
+   entries.filter(function(x){return x.src===src})
+     .sort(function(a,b){return b.index-a.index})
+     .forEach(function(x){p[src].splice(x.index,1)})
+ });
  clearSelection();
- cards.forEach(function(c){pile.push(c)});
+ entries.forEach(function(x){pile.push(x.card)});
  if(r==='10'||four()){
    pile=[];flash(p.name+' burned the pile 🔥');refill(p);checkOut(p);render();
    if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)}
@@ -341,18 +371,54 @@ function playSelected(){
  }
  refill(p);checkOut(p);advance();render();setTimeout(botTurn,600)
 }
-
-function play(pi,index){
- if(ended||pi!==current)return;clearSelection();var p=players[pi],src=source(p),arr=p[src],c=arr[index];if(!c)return;var blind=src==='down';
- if(!blind&&!legal(c)){flash('That card cannot be played');return}
+function finishBlindPlay(pi,index,c){
+ var p=players[pi],arr=p.down;
+ if(ended||current!==pi)return;
+ // The card has remained in its original blind slot during the reveal.
+ if(arr[index]!==c)return;
  arr.splice(index,1);
- if(blind&&!legal(c)){pile.push(c);p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);flash(p.name+' flipped '+c.r+' blind and picked up');advance();render();setTimeout(botTurn,600);return}
+ if(!legal(c)){
+   pile.push(c);p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);
+   flash(p.name+' revealed '+c.r+c.s+' and picked up');
+   advance();render();setTimeout(botTurn,600);return
+ }
  pile.push(c);
- if(c.r==='10'||four()){pile=[];flash(p.name+' burned the pile 🔥');refill(p);checkOut(p);render();if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)};return}
+ if(c.r==='10'||four()){
+   pile=[];flash(p.name+' revealed '+c.r+c.s+' and burned the pile 🔥');
+   refill(p);checkOut(p);render();
+   if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)}
+   return
+ }
+ flash(p.name+' revealed '+c.r+c.s);
  refill(p);checkOut(p);advance();render();setTimeout(botTurn,600)
 }
+function revealBlind(pi,index,c){
+ blindBusy=true;
+ var p=players[pi],valid=legal(c),burn=c.r==='10';
+ $('blindRevealTitle').textContent=p.name.toUpperCase()+' REVEALED';
+ $('blindRevealCard').innerHTML='';
+ $('blindRevealCard').appendChild(cardNode(c,false));
+ $('blindRevealMessage').textContent=valid
+   ?(burn?'10 burns the pile — '+p.name+' plays again.':c.r+c.s+' can be played.')
+   :c.r+c.s+' cannot be played. '+p.name+' must pick up the pile.';
+ $('blindReveal').classList.add('show');
+ setTimeout(function(){
+   $('blindReveal').classList.remove('show');
+   blindBusy=false;
+   finishBlindPlay(pi,index,c)
+ },2200)
+}
+function play(pi,index){
+ if(blindBusy||ended||pi!==current)return;
+ clearSelection();
+ var p=players[pi],src=source(p),arr=p[src],c=arr[index];if(!c)return;
+ if(src==='down'){revealBlind(pi,index,c);return}
+ if(!legal(c)){flash('That card cannot be played');return}
+ selected=[selectionKey(src,index)];
+ playSelected()
+}
 function pickup(){
- if(ended)return;var p=players[current];if(!(p.human||mode==='pass'))return;
+ if(ended||blindBusy)return;var p=players[current];if(!(p.human||mode==='pass'))return;
  if(hasPlayable(p)){flash('You have a playable card — you must play');return}
  if(!pile.length){flash('Nothing to pick up');return}
  clearSelection();p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);flash(p.name+' picked up');advance();render();setTimeout(botTurn,500)
@@ -425,7 +491,7 @@ function botTurn(){
  else if(difficulty==='Medium'&&!repeat)choice=choices[Math.floor(Math.random()*Math.min(choices.length,2))];
  else choice=choices[0];
  p.lastBotRank=choice.r;p.lastBotCount=choice.inds.length;
- selected=choice.inds.slice();playSelected()
+ selected=choice.inds.map(function(i){return selectionKey(src,i)});playSelected()
 }
 function render(){
  if(ended)return;$('turnText').textContent=players[current].name+"'s turn";$('deckText').textContent='DECK · '+deck.length;$('pileText').textContent=pile.length+' CARDS';
@@ -451,8 +517,8 @@ function render(){
  var view=mode==='bots'?players[0]:players[current],human=(mode==='pass'||view.human)&&players.indexOf(view)===current;
  $('handTitle').textContent=mode==='pass'?view.name.toUpperCase()+"'S HAND":'YOUR HAND';var canPlay=human&&hasPlayable(view);$('pickupBtn').style.display=(human&&!canPlay&&pile.length)?'inline-block':'none';$('playSelectedBtn').style.display=(human&&selected.length)?'inline-block':'none';$('playSelectedBtn').textContent=selected.length>1?'PLAY '+selected.length+' CARDS':'PLAY CARD';
  $('tableCards').innerHTML='';var max=Math.max(view.up.length,view.down.length);
- for(var i=0;i<max;i++){(function(i){var w=document.createElement('div');w.className='pair';if(view.down[i]){var b=document.createElement('div');b.className='backcard';b.textContent='💩';if(human&&!view.hand.length&&!view.up.length)b.onclick=function(){play(current,i)};w.appendChild(b)}if(view.up[i]){var cc=cardNode(view.up[i],!legal(view.up[i]));if(selected.indexOf(i)>=0&&!view.hand.length)cc.classList.add('selected');if(human&&!view.hand.length&&legal(view.up[i]))cc.onclick=function(){toggleSelect(i)};w.appendChild(cc)}$('tableCards').appendChild(w)})(i)}
- $('hand').innerHTML='';view.hand.forEach(function(c,i){var ok=human&&legal(c),cc=cardNode(c,!ok);if(selected.indexOf(i)>=0)cc.classList.add('selected');if(ok)cc.onclick=function(){toggleSelect(i)};$('hand').appendChild(cc)})
+ for(var i=0;i<max;i++){(function(i){var w=document.createElement('div');w.className='pair';if(view.down[i]){var b=document.createElement('div');b.className='backcard';b.textContent='💩';if(human&&!view.hand.length&&!view.up.length)b.onclick=function(){play(current,i)};w.appendChild(b)}if(view.up[i]){var cc=cardNode(view.up[i],!legal(view.up[i]));if(selectedAt('up',i))cc.classList.add('selected');if(human&&legal(view.up[i])&&(!view.hand.length||canMixFaceUp(view,view.up[i].r)))cc.onclick=function(){toggleSelect('up',i)};w.appendChild(cc)}$('tableCards').appendChild(w)})(i)}
+ $('hand').innerHTML='';view.hand.forEach(function(c,i){var ok=human&&legal(c),cc=cardNode(c,!ok);if(selectedAt('hand',i))cc.classList.add('selected');if(ok)cc.onclick=function(){toggleSelect('hand',i)};$('hand').appendChild(cc)})
 }
 function gameEnd(){
  ended=true;var loser=-1;for(var i=0;i<players.length;i++)if(finish.indexOf(i)<0){loser=i;break}var order=finish.concat([loser]),data=JSON.parse(localStorage.getItem('pooHeadScores')||'{}');
@@ -464,7 +530,7 @@ function modal(t,b){$('modalTitle').textContent=t;$('modalBody').innerHTML=b;$('
 function closeModal(){$('modal').classList.remove('show')}
 
 $('handoffBtn').onclick=closeHandoff;$('botsBtn').onclick=function(){resetPrivacy();setup('bots')};$('passBtn').onclick=function(){resetPrivacy();setup('pass')};$('scoreBtn').onclick=scores;$('dealBtn').onclick=beginNames;$('namesContinue').onclick=deal;$('swapConfirm').onclick=confirmSwap;$('pickupBtn').onclick=pickup;$('playSelectedBtn').onclick=playSelected;
-$('rulesBtn').onclick=function(){modal('Rules','Play equal or higher. A 2 can be played on anything and resets the pile, so any card may follow it. 8 is transparent and 10 burns. Four equal ranks burns. 7 is an ordinary card, so it can only be played when the normal sequence allows it (or after a 2 reset). After a 7, the next player must play 7 or lower. Special cards can always be played. When your hand is gone, use face-up cards, then face-down blind.')};
+$('rulesBtn').onclick=function(){modal('Rules','Play equal or higher. A 2 can be played on anything and resets the pile, so any card may follow it. 8 is transparent and 10 burns. Four equal ranks burns. 7 is an ordinary card, so it can only be played when the normal sequence allows it (or after a 2 reset). After a 7, the next player must play 7 or lower. Special cards can always be played. When your hand is gone, use face-up cards, then face-down blind. You may combine matching face-up cards with the final cards in your hand if every remaining hand card is included in that play. Blind cards are revealed before their result is resolved.')};
 $('exitBtn').onclick=function(){modal('Leave game?','Press OK to return to the home screen.');$('modalOk').onclick=function(){closeModal();show('home');$('modalOk').onclick=closeModal}};
 $('modalOk').onclick=closeModal;$('resetBtn').onclick=function(){localStorage.removeItem('pooHeadScores');scores()};
 document.querySelectorAll('[data-home]').forEach(function(b){b.onclick=function(){resetPrivacy();show('home')}});
