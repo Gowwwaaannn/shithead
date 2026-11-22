@@ -290,7 +290,7 @@ function four(){
  return a.length===4&&a.every(function(x){return x===a[0]})
 }
 function refill(p){var target=count<=4?3:2;while(deck.length&&p.hand.length>0&&p.hand.length<target)p.hand.push(deck.pop());sortHand(p.hand)}
-function checkOut(p){if(!p.hand.length&&!p.up.length&&!p.down.length&&!p.out){p.out=true;finish.push(players.indexOf(p));flash(p.name+' is out!');if(finish.length===players.length-1)gameEnd()}}
+function checkOut(p){if(!p.hand.length&&!p.up.length&&!p.down.length&&!p.out){p.out=true;finish.push(players.indexOf(p));flash(p.name.trim().toLowerCase()==='you'?'You are out!':p.name+' is out!');if(finish.length===players.length-1)gameEnd()}}
 function advance(){
  if(ended)return;
  var previous=current,n=current;
@@ -379,22 +379,26 @@ function finishBlindPlay(pi,index,c){
  arr.splice(index,1);
  if(!legal(c)){
    pile.push(c);p.hand=p.hand.concat(pile);pile=[];sortHand(p.hand);
-   flash(p.name+' revealed '+c.r+c.s+' and picked up');
+   flash(p.human?p.name+' revealed '+c.r+c.s+' and picked up':p.name+' picked up after a blind play');
    advance();render();setTimeout(botTurn,600);return
  }
  pile.push(c);
  if(c.r==='10'||four()){
-   pile=[];flash(p.name+' revealed '+c.r+c.s+' and burned the pile 🔥');
+   pile=[];flash(p.human?p.name+' revealed '+c.r+c.s+' and burned the pile 🔥':p.name+' burned the pile 🔥');
    refill(p);checkOut(p);render();
    if(!p.out)setTimeout(botTurn,600);else{advance();render();setTimeout(botTurn,600)}
    return
  }
- flash(p.name+' revealed '+c.r+c.s);
+ flash(p.human?p.name+' revealed '+c.r+c.s:p.name+' played a blind card');
  refill(p);checkOut(p);advance();render();setTimeout(botTurn,600)
 }
 function revealBlind(pi,index,c){
+ var p=players[pi];
+ // Only reveal the card on-screen to the person currently playing.
+ // Bot blind plays resolve immediately without displaying a reveal overlay.
+ if(!p.human){finishBlindPlay(pi,index,c);return}
  blindBusy=true;
- var p=players[pi],valid=legal(c),burn=c.r==='10';
+ var valid=legal(c),burn=c.r==='10';
  $('blindRevealTitle').textContent=p.name.toUpperCase()+' REVEALED';
  $('blindRevealCard').innerHTML='';
  $('blindRevealCard').appendChild(cardNode(c,false));
