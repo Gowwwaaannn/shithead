@@ -117,7 +117,7 @@ function makeDeck(){var a=[];suits.forEach(function(s){ranks.forEach(function(r)
 function sortHand(a){a.sort(function(x,y){var xs=isSpecial(x.r),ys=isSpecial(y.r);if(xs!==ys)return xs?1:-1;return val(x.r)-val(y.r)})}
 function topEffective(){for(var i=pile.length-1;i>=0;i--)if(pile[i].r!=='8')return pile[i];return null}
 function legal(c){if(isSpecial(c.r))return true;var t=topEffective();if(!t)return true;if(t.r==='2')return true;if(t.r==='7')return val(c.r)<=val('7');return val(c.r)>=val(t.r)}
-function source(p){return p.hand.length?'hand':(p.up.length?'up':'down')}
+function source(p){return (deck.length||p.hand.length)?'hand':(p.up.length?'up':'down')}
 function cardNode(c,disabled){
  var d=document.createElement('div');d.className='card '+((c.s==='♥'||c.s==='♦')?'red ':'')+(disabled?'disabled':'');
  d.innerHTML='<span class="rank">'+c.r+'</span><span class="suit">'+c.s+'</span>';return d
@@ -291,7 +291,7 @@ function four(){
  for(var i=pile.length-1;i>=0&&a.length<4;i--){if(pile[i].r!=='8')a.push(pile[i].r)}
  return a.length===4&&a.every(function(x){return x===a[0]})
 }
-function refill(p){var target=count<=4?3:2;while(deck.length&&p.hand.length>0&&p.hand.length<target)p.hand.push(deck.pop());sortHand(p.hand)}
+function refill(p){var target=count<=4?3:2;while(deck.length&&p.hand.length<target)p.hand.push(deck.pop());sortHand(p.hand)}
 function checkOut(p){if(!p.hand.length&&!p.up.length&&!p.down.length&&!p.out){p.out=true;finish.push(players.indexOf(p));flash(p.name.trim().toLowerCase()==='you'?'You are out!':p.name+' is out!');if(finish.length===players.length-1)gameEnd()}}
 function advance(){
  if(ended)return;
@@ -325,7 +325,7 @@ function selectedCards(p){
 function canMixFaceUp(p,rank){
  // All cards remaining in the hand must be selected for this one move,
  // and all must have the same rank as the chosen face-up card.
- return p.hand.length>0 && p.hand.every(function(c,i){
+ return deck.length===0 && p.hand.length>0 && p.hand.every(function(c,i){
    return c.r===rank && selectedAt('hand',i)
  })
 }
@@ -333,6 +333,7 @@ function toggleSelect(src,index){
  if(blindBusy||ended||(mode==='bots'&&current!==0))return;
  var p=players[current];
  if(src!=='hand'&&src!=='up')return;
+ if(src==='up'&&deck.length)return;
  if(src==='up'&&p.hand.length&&!canMixFaceUp(p,p.up[index]&&p.up[index].r))return;
  if(src==='hand'&&!p.hand.length)return;
  var c=p[src][index];if(!c||!legal(c))return;
@@ -354,6 +355,7 @@ function playSelected(){
  var r=entries[0].card.r;
  if(entries.some(function(x){return x.card.r!==r||!legal(x.card)}))return;
  var ups=entries.filter(function(x){return x.src==='up'});
+ if(ups.length&&deck.length)return;
  if(ups.length&&p.hand.length){
    var hands=entries.filter(function(x){return x.src==='hand'});
    if(hands.length!==p.hand.length||!p.hand.every(function(c){return c.r===r}))return
@@ -523,7 +525,7 @@ function render(){
  var view=mode==='bots'?players[0]:players[current],human=(mode==='pass'||view.human)&&players.indexOf(view)===current;
  $('handTitle').textContent=mode==='pass'?view.name.toUpperCase()+"'S HAND":'YOUR HAND';var canPlay=human&&hasPlayable(view);$('pickupCue').classList.toggle('show',!!(human&&!canPlay&&pile.length&&!blindBusy));$('pickupBtn').style.display=(human&&!canPlay&&pile.length)?'inline-block':'none';$('playSelectedBtn').style.display=(human&&selected.length)?'inline-block':'none';$('playSelectedBtn').textContent=selected.length>1?'PLAY '+selected.length+' CARDS':'PLAY CARD';
  $('tableCards').innerHTML='';var max=Math.max(view.up.length,view.down.length);
- for(var i=0;i<max;i++){(function(i){var w=document.createElement('div');w.className='pair';if(view.down[i]){var b=document.createElement('div');b.className='backcard';b.textContent='💩';if(human&&!view.hand.length&&!view.up.length)b.onclick=function(){play(current,i)};w.appendChild(b)}if(view.up[i]){var cc=cardNode(view.up[i],!legal(view.up[i]));if(selectedAt('up',i))cc.classList.add('selected');if(human&&legal(view.up[i])&&(!view.hand.length||canMixFaceUp(view,view.up[i].r)))cc.onclick=function(){toggleSelect('up',i)};w.appendChild(cc)}$('tableCards').appendChild(w)})(i)}
+ for(var i=0;i<max;i++){(function(i){var w=document.createElement('div');w.className='pair';if(view.down[i]){var b=document.createElement('div');b.className='backcard';b.textContent='💩';if(human&&!deck.length&&!view.hand.length&&!view.up.length)b.onclick=function(){play(current,i)};w.appendChild(b)}if(view.up[i]){var cc=cardNode(view.up[i],!legal(view.up[i]));if(selectedAt('up',i))cc.classList.add('selected');if(human&&!deck.length&&legal(view.up[i])&&(!view.hand.length||canMixFaceUp(view,view.up[i].r)))cc.onclick=function(){toggleSelect('up',i)};w.appendChild(cc)}$('tableCards').appendChild(w)})(i)}
  $('hand').innerHTML='';view.hand.forEach(function(c,i){var ok=human&&legal(c),cc=cardNode(c,!ok);if(selectedAt('hand',i))cc.classList.add('selected');if(ok)cc.onclick=function(){toggleSelect('hand',i)};$('hand').appendChild(cc)})
 }
 function gameEnd(){
@@ -536,7 +538,7 @@ function modal(t,b){$('modalTitle').textContent=t;$('modalBody').innerHTML=b;$('
 function closeModal(){$('modal').classList.remove('show')}
 
 $('handoffBtn').onclick=closeHandoff;$('botsBtn').onclick=function(){resetPrivacy();setup('bots')};$('passBtn').onclick=function(){resetPrivacy();setup('pass')};$('scoreBtn').onclick=scores;$('dealBtn').onclick=beginNames;$('namesContinue').onclick=deal;$('swapConfirm').onclick=confirmSwap;$('pickupBtn').onclick=pickup;$('playSelectedBtn').onclick=playSelected;
-$('rulesBtn').onclick=function(){modal('Rules','Play equal or higher. A 2 can be played on anything and resets the pile, so any card may follow it. 8 is transparent and 10 burns. Four equal ranks burns. 7 is an ordinary card, so it can only be played when the normal sequence allows it (or after a 2 reset). After a 7, the next player must play 7 or lower. Special cards can always be played. When your hand is gone, use face-up cards, then face-down blind. You may combine matching face-up cards with the final cards in your hand if every remaining hand card is included in that play. Blind cards are revealed before their result is resolved.')};
+$('rulesBtn').onclick=function(){modal('Rules','Play equal or higher. A 2 can be played on anything and resets the pile, so any card may follow it. 8 is transparent and 10 burns. Four equal ranks burns. 7 is an ordinary card, so it can only be played when the normal sequence allows it (or after a 2 reset). After a 7, the next player must play 7 or lower. Special cards can always be played. After each play, draw back up to three cards (two for five or more players) while the deck lasts. Only once the deck is empty and your hand is gone, use face-up cards, then face-down blind. Once the deck is empty, you may combine matching face-up cards with the final cards in your hand if every remaining hand card is included in that play. Blind cards are revealed before their result is resolved.')};
 $('exitBtn').onclick=function(){modal('Leave game?','Press OK to return to the home screen.');$('modalOk').onclick=function(){closeModal();show('home');$('modalOk').onclick=closeModal}};
 $('modalOk').onclick=closeModal;$('resetBtn').onclick=function(){localStorage.removeItem('pooHeadScores');scores()};
 document.querySelectorAll('[data-home]').forEach(function(b){b.onclick=function(){resetPrivacy();show('home')}});
